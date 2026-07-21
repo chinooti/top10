@@ -3,9 +3,8 @@ import csv
 file = open("top10.csv", "r") #rename file to match name of csv file containing data
 data = csv.reader(file)
 datalists = list(data)
-print(datalists)
 del datalists[0] #deletes the header row
-print(datalists)
+
 
 found = False
 tally = []
@@ -24,8 +23,6 @@ for row in datalists:
             tally.append([name,score])
             
 
-print("Here's the tally")
-print(tally)
 
 tally.sort(key=lambda x: x[1],reverse = True)
 for i in range(10):
